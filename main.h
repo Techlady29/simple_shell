@@ -1,7 +1,10 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <fcntl.h>
 #include <signal.h>
+#include <string.h>
+#include <limits.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
@@ -91,13 +94,13 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 
 /* Builtins */
 int (*get_builtin(char *command))(char **args, char **front);
-int shellby_exit(char **args, char **front);
-int shellby_env(char **args, char __attribute__((__unused__)) **front);
-int shellby_setenv(char **args, char __attribute__((__unused__)) **front);
-int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front);
-int shellby_cd(char **args, char __attribute__((__unused__)) **front);
-int shellby_alias(char **args, char __attribute__((__unused__)) **front);
-int shellby_help(char **args, char __attribute__((__unused__)) **front);
+int shellof_exit(char **args, char **front);
+int shellof_env(char **args, char __attribute__((__unused__)) **front);
+int shellof_setenv(char **args, char __attribute__((__unused__)) **front);
+int shellof_unsetenv(char **args, char __attribute__((__unused__)) **front);
+int shellof_cd(char **args, char __attribute__((__unused__)) **front);
+int shellof_alias(char **args, char __attribute__((__unused__)) **front);
+int shellof_help(char **args, char __attribute__((__unused__)) **front);
 
 /* Builtin Helpers */
 char **_copyenv(void);
@@ -135,4 +138,4 @@ int proc_file_commands(char *file_path, int *exe_ret);
 /* memeory leaks */
 int memfree(void **p);
 
-#endif /* _SHELL_H_ */
+#endif /* MAIN_H */
