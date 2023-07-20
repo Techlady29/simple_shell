@@ -67,7 +67,8 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_strtok(char *line, char *delim);
 char *get_location(char *command);
 list_t *get_path_dir(char *path);
-int execute(char **args, char **front);
+void print_prompt(int s);
+int exe_command(char **arg, char **p);
 void free_list(list_t *head);
 char *_itoa(int num);
 
