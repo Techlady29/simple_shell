@@ -1,7 +1,10 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <fcntl.h>
 #include <signal.h>
+#include <string.h>
+#include <limits.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
@@ -133,6 +136,6 @@ void help_history(void);
 int proc_file_commands(char *file_path, int *exe_ret);
 
 /* memeory leaks */
-int memleak(void **p);
+int memfree(void **p);
 
-#endif /* _SHELL_H_ */
+#endif /* MAIN_H */
