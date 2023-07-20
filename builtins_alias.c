@@ -1,7 +1,7 @@
 #include "main.h"
 
-int shellby_alias(char **args, char __attribute__((__unused__)) **front);
-void set_alias(char *var_name, char *value);
+int shellof_alias(char **args, char __attribute__((__unused__)) **front);
+void get_alias(char *var_name, char *value);
 void print_alias(alias_t *alias);
 
 
@@ -88,7 +88,7 @@ int shellof_alias(char **args, char __attribute__((__unused__)) **front)
 				ret = create_error(args + d, 1);
 		}
 		else
-			set_alias(args[d], value);
+			get_alias(args[d], value);
 	}
 	return (ret);
 }
