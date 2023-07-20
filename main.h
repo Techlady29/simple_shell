@@ -133,6 +133,6 @@ void help_history(void);
 int proc_file_commands(char *file_path, int *exe_ret);
 
 /* memeory leaks */
-int memleak(void **p);
+int memfree(void **p);
 
 #endif /* _SHELL_H_ */
