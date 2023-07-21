@@ -57,7 +57,7 @@ int exe_command(char **arg, char **p)
 			if (errno == EACCES)
 				r = (create_error(arg, 126));
 			free_env();
-			free_args(arg, p);
+			free_mem(arg, p);
 			free_alias_list(aliases);
 			_exit(r);
 		}

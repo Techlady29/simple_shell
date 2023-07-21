@@ -74,13 +74,15 @@ char *_itoa(int num);
 
 /* Input Helpers */
 void handle_line(char **line, ssize_t read);
-void variable_replacement(char **args, int *exe_ret);
+void handle_variable(char **arg, int *ret_com);
+char *get_pid(void);
+char *make_env_value(char *b, int l);
 char *get_args(char *line, int *exe_ret);
 int call_args(char **args, char **front, int *exe_ret);
 int run_args(char **args, char **front, int *exe_ret);
 int handle_args(int *exe_ret);
 int check_args(char **args);
-void free_args(char **args, char **front);
+void free_mem(char **arg, char **p);
 char **replace_aliases(char **args);
 
 /* String functions */
