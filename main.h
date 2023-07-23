@@ -98,8 +98,8 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 /* Builtins */
 int (*get_builtin(char *command))(char **args, char **front);
 int shellof_exit(char **args, char **front);
-int shellof_env(char **args, char __attribute__((__unused__)) **front);
-int shellof_setenv(char **args, char __attribute__((__unused__)) **front);
+int shellof_en(char **args, char __attribute__((__unused__)) **front);
+int shellof_geten(char **args, char __attribute__((__unused__)) **front);
 int shellof_unsetenv(char **args, char __attribute__((__unused__)) **front);
 int shellof_cd(char **args, char __attribute__((__unused__)) **front);
 int shellof_alias(char **args, char __attribute__((__unused__)) **front);
