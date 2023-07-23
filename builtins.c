@@ -76,7 +76,7 @@ int shellof_exit(char **args, char **front)
 	args -= 1;
 	free_mem(args, front);
 	free_env();
-	free_alias_list(aliases);
+	free_alias(aliases);
 	exit(num);
 }
 
