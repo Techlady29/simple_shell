@@ -73,15 +73,17 @@ void free_list(list_t *head);
 char *_itoa(int num);
 
 /* Input Helpers */
-void handle_line(char **line, ssize_t read);
+void split_line(char **l, ssize_t r);
+ssize_t get_new_line(char *l);
+void check_op(char *l, ssize_t *len);
 void handle_variable(char **arg, int *ret_com);
 char *get_pid(void);
 char *make_env_value(char *b, int l);
-char *get_args(char *line, int *exe_ret);
-int call_args(char **args, char **front, int *exe_ret);
-int run_args(char **args, char **front, int *exe_ret);
-int handle_args(int *exe_ret);
-int check_args(char **args);
+char *get_arg(char *l, int *ret_com);
+int name_arg(char **arg, char **p, int *ret_com);
+int execute_arg(char **arg, char **p, int *ret_com);
+int handle_arg(int *ret_com);
+int test_arg(char **arg);
 void free_mem(char **arg, char **p);
 char **replace_aliases(char **args);
 

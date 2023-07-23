@@ -39,7 +39,7 @@ int exe_command(char **arg, char **p)
 		if (errno == EACCES)
 			r = (create_error(arg, 126));
 		else
-			r = (create_error(arg, 139));
+			r = (create_error(arg, 127));
 	}
 	else
 	{
@@ -104,7 +104,7 @@ int main(int argc, char *argv[])
 	if (!isatty(STDIN_FILENO))
 	{
 		while (r != END_OF_FILE && r != EXIT)
-			r = handle_args(exe_return);
+			r = handle_arg(exe_return);
 		free_env();
 		free_alias_list(aliases);
 		return (*exe_return);
@@ -113,7 +113,7 @@ int main(int argc, char *argv[])
 	while (1)
 	{
 		write(STDOUT_FILENO, p, 2);
-		r = handle_args(exe_return);
+		r = handle_arg(exe_return);
 		if (r == END_OF_FILE || r == EXIT)
 		{
 			if (r == END_OF_FILE)
