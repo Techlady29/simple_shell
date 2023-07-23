@@ -30,7 +30,7 @@ int hist;
  */
 typedef struct list_s
 {
-	char *dir;
+	char *d;
 	struct list_s *next;
 } list_t;
 
@@ -123,10 +123,10 @@ char *error_126(char **args);
 char *error_127(char **args);
 
 /* Linkedlist Helpers */
-alias_t *add_alias_end(alias_t **head, char *name, char *value);
-void free_alias_list(alias_t *head);
-list_t *add_node_end(list_t **head, char *dir);
-void free_list(list_t *head);
+alias_t *add_alias(alias_t **h, char *n, char *v);
+void free_alias(alias_t *h);
+list_t *add_node_end(list_t **h, char *d);
+void free_list(list_t *h);
 
 void help_all(void);
 void help_alias(void);

@@ -58,7 +58,7 @@ int exe_command(char **arg, char **p)
 				r = (create_error(arg, 126));
 			free_env();
 			free_mem(arg, p);
-			free_alias_list(aliases);
+			free_alias(aliases);
 			_exit(r);
 		}
 		else
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
 	{
 		r = proc_file_commands(argv[1], exe_return);
 		free_env();
-		free_alias_list(aliases);
+		free_alias(aliases);
 		return (*exe_return);
 	}
 
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
 		while (r != END_OF_FILE && r != EXIT)
 			r = handle_arg(exe_return);
 		free_env();
-		free_alias_list(aliases);
+		free_alias(aliases);
 		return (*exe_return);
 	}
 
@@ -119,12 +119,12 @@ int main(int argc, char *argv[])
 			if (r == END_OF_FILE)
 				write(STDOUT_FILENO, line, 1);
 			free_env();
-			free_alias_list(aliases);
+			free_alias(aliases);
 			exit(*exe_return);
 		}
 	}
 
 	free_env();
-	free_alias_list(aliases);
+	free_alias(aliases);
 	return (*exe_return);
 }
