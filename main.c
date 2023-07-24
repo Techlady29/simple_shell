@@ -95,7 +95,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 1)
 	{
-		r = proc_file_commands(argv[1], exe_return);
+		r = process_file(argv[1], exe_return);
 		free_env();
 		free_alias(aliases);
 		return (*exe_return);

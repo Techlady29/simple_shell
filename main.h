@@ -139,7 +139,8 @@ void help_setenv(void);
 void help_unsetenv(void);
 void help_history(void);
 
-int proc_file_commands(char *file_path, int *exe_ret);
+int cannot_open(char *path);
+int process_file(char *path, int *ret_com);
 
 /* memeory leaks */
 int memfree(void **p);
