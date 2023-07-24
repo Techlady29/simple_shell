@@ -7,7 +7,7 @@ char **_strtok(char *l, char *d);
 /**
  * token_length - A program that locates a token in a string
  * @s: string to be used
- * @delim: The charater to be used
+ * @d: The charater to be used
  * Return: The token
  */
 int token_length(char *s, char *d)
@@ -25,8 +25,8 @@ int token_length(char *s, char *d)
 
 /**
  * count_token - A program that counts the number of words in a string
- * @str: string to be used
- * @delim: character to be used
+ * @s: string to be used
+ * @d: character to be used
  * Return: number of words in a string
  */
 int count_token(char *s, char *d)
