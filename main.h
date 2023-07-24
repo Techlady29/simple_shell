@@ -17,7 +17,7 @@
 #define EXIT -3
 
 /* Global environemnt */
-extern char **environs;
+extern char **environ;
 /* Global program name */
 char *name;
 /* Global history counter */
