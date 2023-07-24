@@ -114,14 +114,14 @@ void free_env(void);
 char **_getenv(const char *var);
 
 /* Error Handling */
-int create_error(char **args, int err);
-char *error_env(char **args);
-char *error_1(char **args);
-char *error_2_exit(char **args);
-char *error_2_cd(char **args);
-char *error_2_syntax(char **args);
-char *error_126(char **args);
-char *error_127(char **args);
+int create_error(char **arg, int err);
+char *error_env00(char **arg);
+char *error_01(char **arg);
+char *error_02_exit(char **arg);
+char *error_02_cd(char **arg);
+char *error_02_syntax(char **arg);
+char *error_124(char **arg);
+char *error_125(char **arg);
 
 /* Linkedlist Helpers */
 alias_t *add_alias(alias_t **h, char *n, char *v);
