@@ -18,8 +18,8 @@ int (*get_builtin(char *command))(char **args, char **front)
 {
 	builtin_t funcs[] = {
 		{ "exit", shellof_exit },
-		{ "en", shellof_en },
-		{ "setenv", shellof_geten },
+		{ "env", shellof_env },
+		{ "setenv", shellof_setenv },
 		{ "unsetenv", shellof_unsetenv },
 		{ "cd", shellof_cd },
 		{ "alias", shellof_alias },

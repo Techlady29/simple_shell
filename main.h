@@ -62,12 +62,11 @@ typedef struct alias_s
 alias_t *aliases;
 
 /* Main Helpers */
-ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+ssize_t _getline(char **line, size_t *m, FILE *stream);
+void *_realloc(void *p, unsigned int old_, unsigned int new_size);
 char **_strtok(char *line, char *delim);
 char *get_location(char *com);
-char *fill_path(char *p);
-list_t *get_path(char *p);
+list_t *get_path_dir(char *p);
 void print_prompt(int s);
 int exe_command(char **arg, char **p);
 void free_list(list_t *head);
@@ -75,7 +74,7 @@ char *_itoa(int num);
 
 /* Input Helpers */
 void split_line(char **l, ssize_t r);
-ssize_t get_new_line(char *l);
+void variable_replacement(char **args, int *exe_ret);
 void check_op(char *l, ssize_t *len);
 void handle_variable(char **arg, int *ret_com);
 char *get_pid(void);
@@ -89,20 +88,20 @@ void free_mem(char **arg, char **p);
 char **replace_aliases(char **args);
 
 /* String functions */
-int _strlen(const char *s);
+int _strlen(const char *t);
 char *_strcat(char *dest, const char *src);
-char *_strncat(char *dest, const char *src, size_t n);
+char *_strncat(char *dest, const char *src, size_t m);
 char *_strcpy(char *dest, const char *src);
-char *_strchr(char *s, char c);
-int _strspn(char *s, char *accept);
-int _strcmp(char *s1, char *s2);
-int _strncmp(const char *s1, const char *s2, size_t n);
+char *_strchr(char *string, char d);
+int _strspn(char *string, char *accept);
+int _strcmp(char *string1, char *string2);
+int _strncmp(const char *string1, const char *string2, size_t m);
 
 /* Builtins */
 int (*get_builtin(char *command))(char **args, char **front);
 int shellof_exit(char **args, char **front);
-int shellof_en(char **args, char __attribute__((__unused__)) **front);
-int shellof_geten(char **args, char __attribute__((__unused__)) **front);
+int shellof_env(char **args, char __attribute__((__unused__)) **front);
+int shellof_setenv(char **args, char __attribute__((__unused__)) **front);
 int shellof_unsetenv(char **args, char __attribute__((__unused__)) **front);
 int shellof_cd(char **args, char __attribute__((__unused__)) **front);
 int shellof_alias(char **args, char __attribute__((__unused__)) **front);
@@ -114,14 +113,14 @@ void free_env(void);
 char **_getenv(const char *var);
 
 /* Error Handling */
-int create_error(char **arg, int err);
-char *error_env00(char **arg);
-char *error_01(char **arg);
-char *error_02_exit(char **arg);
-char *error_02_cd(char **arg);
-char *error_02_syntax(char **arg);
-char *error_124(char **arg);
-char *error_125(char **arg);
+int create_error(char **args, int err);
+char *error_env00(char **args);
+char *error_01(char **args);
+char *error_02_exit(char **args);
+char *error_02_cd(char **args);
+char *error_02_syntax(char **args);
+char *error_124(char **args);
+char *error_125(char **args);
 
 /* Linkedlist Helpers */
 alias_t *add_alias(alias_t **h, char *n, char *v);
