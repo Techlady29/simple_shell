@@ -1,18 +1,18 @@
 #include "main.h"
 
-void help_ungeten(void);
-void help_en(void);
+void _unsetenv(void);
+void _env(void);
 void help_record(void);
-void help_geten(void);
+void _setenv(void);
 
 /**
- * help_ungeten - this displays information on the shellof builtin command
- * 'ungeten'
+ * _unsetenv - this displays information on the shellof builtin command
+ *             unsetenv
  */
 
-void help_ungeten(void)
+void _unsetenv(void)
 {
-	char *msg = "ungeten: ungeten [VARIABLE]\n\tRemoves an ";
+	char *msg = "unsetenv: unsetenv [VARIABLE]\n\tRemoves an ";
 
 	write(STDOUT_FILENO, msg, _strlen(msg));
 	msg = "environmental variable.\n\n\tIf it fails, prints a ";
@@ -23,24 +23,24 @@ void help_ungeten(void)
 
 
 /**
- * help_en - this displays information on the shellof builtin command 'en'
+ * _env - this displays information on the shellof builtin command env
  */
 
-void help_en(void)
+void _env(void)
 {
-	char *msg = "en: en\n\tThis prints the current environment.\n";
+	char *msg = "env: env\n\tThis prints the current environment.\n";
 
 	write(STDOUT_FILENO, msg, _strlen(msg));
 }
 
 /**
- * help_geten - this displays information on the shellof builtin
- * command 'geten'
+ * _setenv - this displays information on the shellof builtin
+ * command setenv
  */
 
-void help_geten(void)
+void _setenv(void)
 {
-	char *msg = "geten: geten [VARIABLE] [VALUE]\n\tThis initializes a new";
+	char *msg = "setenv: setenv [VARIABLE] [VALUE]\n\tThis initializes a new";
 
 	write(STDOUT_FILENO, msg, _strlen(msg));
 	msg = "environment variable, or modifies an existing one.\n\n";

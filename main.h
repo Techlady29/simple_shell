@@ -133,10 +133,10 @@ void help_alias(void);
 void help_cd(void);
 void help_exit(void);
 void help_help(void);
-void help_env(void);
-void help_setenv(void);
-void help_unsetenv(void);
-void help_history(void);
+void _env(void);
+void _setenv(void);
+void _unsetenv(void);
+void help_record(void);
 
 int cannot_open(char *path);
 int process_file(char *path, int *ret_com);

@@ -1,18 +1,18 @@
 #include "main.h"
 
-int shellof_geten(char **arg, char __attribute__((__unused__)) **p);
-int shellof_ungeten(char **arg, char __attribute__((__unused__)) **p);
-int shellof_en(char **arg, char __attribute__((__unused__)) **p);
+int shellof_setenv(char **arg, char __attribute__((__unused__)) **p);
+int shellof_unsetenv(char **arg, char __attribute__((__unused__)) **p);
+int shellof_env(char **arg, char __attribute__((__unused__)) **p);
 
 
 /**
- * shellof_geten - this changes or adds an environmental variable to the PATH
+ * shellof_setenv - this changes or adds an environmental variable to the PATH
  * @arg: an array of arguments passed to the shell
  * @p: a double pointer to the beginning of arguements
  * Return: -1 if an error occurs otherwise - 0
  */
 
-int shellof_geten(char **arg, char __attribute__((__unused__)) **p)
+int shellof_setenv(char **arg, char __attribute__((__unused__)) **p)
 {
 	char **en_var = NULL, **new_environ, *new_value;
 	size_t size;
@@ -57,13 +57,13 @@ int shellof_geten(char **arg, char __attribute__((__unused__)) **p)
 }
 
 /**
- * shellof_ungeten - this deletes an environmental variable from the PATH
+ * shellof_unsetenv - this deletes an environmental variable from the PATH
  * @arg: an array of arguments passed to the shell
  * @p: a double pointer to the beginning of arguements
  * Return: -1 if an error occurs, otherwise - 0
  */
 
-int shellof_ungeten(char **arg, char __attribute__((__unused__)) **p)
+int shellof_unsetenv(char **arg, char __attribute__((__unused__)) **p)
 {
 	char **en_var, **new_environ;
 	size_t size;
@@ -100,14 +100,14 @@ int shellof_ungeten(char **arg, char __attribute__((__unused__)) **p)
 }
 
 /**
- * shellof_en - this prints the current environment
+ * shellof_env - this prints the current environment
  * @arg: an array of arguments passed to the shell
  * @p: a double pointer to the beginning of arguements
  * Return: -1 if an error occurs otherwise - 0
  */
 
 
-int shellof_en(char **arg, char __attribute__((__unused__)) **p)
+int shellof_env(char **arg, char __attribute__((__unused__)) **p)
 {
 	int index0;
 	char bc = '\n';
